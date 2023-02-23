@@ -1,0 +1,49 @@
+\ProvidesPackage{mathes}
+
+\usepackage{xeinsusualheader}
+\usepackage[autostyle=true]{csquotes}
+\usepackage{polyglossia}
+\setdefaultlanguage{spanish}
+\setotherlanguage{english}
+
+
+\setmainfont{cmun}[
+    Extension=.otf,UprightFont=*rm,ItalicFont=*ti,
+    BoldFont=*bx,BoldItalicFont=*bi,
+]
+\setsansfont{cmun}[
+    Extension=.otf,UprightFont=*ss,ItalicFont=*si,
+    BoldFont=*sx,BoldItalicFont=*so,
+]
+\setmonofont{cmun}[
+    Extension=.otf,UprightFont=*btl,ItalicFont=*bto,
+    BoldFont=*tb,BoldItalicFont=*tx,
+]
+
+\defaultfontfeatures{ligatures=tex}
+
+\newtheorem{thm}{Teorema}
+\newtheorem{lem}[thm]{lema}
+\newtheorem{cor}{Corolario}
+\theoremstyle{remark}
+\newtheorem*{remark*}{Observación}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definición}
+\theoremstyle{remark}
+\newtheorem{remark}{Observación}
+\setlist{leftmargin=2em,format=\bfseries}
+\setlist[1]{ref = \arabic*}
+\setlist[2]{ref = (\alph*)}
+
+\newcommand{\ans}{\emph{Respuesta: }}
+\newcommand{\ctnex}{\emph{Contraejemplo: }}
+
+\setlength{\parskip}{2em}
+\setlength{\parindent}{0em}
+
+\renewcommand{\phi}{\varphi}
+\renewcommand{\epsilon}{\varepsilon}
+
+\DeclareMathOperator{\Bd}{Bd}
+\DeclareMathOperator{\Int}{Int}
