@@ -1,0 +1,160 @@
+\ProvidesPackage{mathen}
+
+\usepackage[%
+  a4paper,
+  top=1.5cm,
+  bottom=1.5cm,
+  left=2cm,
+  right=2cm]{geometry}
+
+\usepackage{bm}
+\usepackage{enumitem}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{IEEEtrantools}
+
+\binoppenalty=9999
+\relpenalty=9999
+
+\usepackage[hidelinks]{hyperref}
+
+\setlist{leftmargin=2em,format=\bfseries}
+\setlist[1]{ref = \arabic*}
+\setlist[2]{ref = (\alph*)}
+
+\setlength{\parskip}{2em}
+\setlength{\parindent}{0em}
+
+\newcommand{\rcomment}[1]{\makebox[0pt][r]{\quad #1}}
+% \newcommand{\comment}[1]{{\settowidth{\dimen0}{#1}\hspace*{-\dimen0}}{#1}}
+% a package already contains it, so we do prov + renew to force our definition
+\providecommand{\comment}[1]{\makebox[0pt][l]{\quad #1}}
+\renewcommand{\comment}[1]{\makebox[0pt][l]{\quad #1}}
+\makeatletter
+\newcommand{\nextitemis}[1]{%
+  \setcounter{\@enumctr}{#1}%
+  \addtocounter{\@enumctr}{-1}%
+}
+\newcommand{\skipitems}[1]{%
+  \addtocounter{\@enumctr}{#1}%
+}
+\newcommand{\skipitem}{%
+  \stepcounter{\@enumctr}%
+}
+\makeatother
+\makeatother
+
+\renewcommand{\phi}{\varphi}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\ud}{\, \mathrm{d}}
+
+\usepackage[autostyle=true]{csquotes}
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+
+
+\setmainfont{cmun}[
+    Extension=.otf,UprightFont=*rm,ItalicFont=*ti,
+    BoldFont=*bx,BoldItalicFont=*bi,
+]
+\setsansfont{cmun}[
+    Extension=.otf,UprightFont=*ss,ItalicFont=*si,
+    BoldFont=*sx,BoldItalicFont=*so,
+]
+\setmonofont{cmun}[
+    Extension=.otf,UprightFont=*btl,ItalicFont=*bto,
+    BoldFont=*tb,BoldItalicFont=*tx,
+]
+
+\defaultfontfeatures{ligatures=tex}
+
+\usepackage[%
+  a4paper,
+  top=1.5cm,
+  bottom=1.5cm,
+  left=2cm,
+  right=2cm]{geometry}
+
+\usepackage{bm}
+\usepackage{enumitem}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{amsthm}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheoremstyle{unNumThm}{0pt}{}{\itshape}{}{\bfseries}{.}{.5em}{}
+
+\newtheoremstyle{nospaceafter}
+{}
+{0pt}
+{}
+{}
+{\bfseries}
+{.}
+{.0em}
+{}
+
+\theoremstyle{nospaceafter} \newtheorem{lem}{Lemma}
+
+\theoremstyle{unNumThm}
+\newtheorem*{unNumThm}{Theorem}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\newenvironment{shortthm}{\textbf{Theorem.}\space\it}{\par}
+\newenvironment{shortlem}{\textbf{Lemma.}\space\it}{\par}
+
+\usepackage{IEEEtrantools}
+
+\binoppenalty=9999
+\relpenalty=9999
+
+\usepackage[hidelinks]{hyperref}
+
+\newcommand{\ans}{\emph{Answer: }}
+\newcommand{\ctnex}{\emph{Counterexample: }}
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\setlist{parsep=\parskip,leftmargin=2em,format=\bfseries}
+\setlist[1]{ref = \arabic*}
+\setlist[2]{ref = (\alph*)}
+
+% \newcommand{\comment}[1]{{\settowidth{\dimen0}{#1}\hspace*{-\dimen0}}{#1}}
+\newcommand{\comment}[1]{\makebox[0pt][l]{\quad #1}}
+\newcommand{\rcomment}[1]{\makebox[0pt][r]{\quad #1}}
+\makeatletter
+\newcommand{\nextitemis}[1]{%
+  \setcounter{\@enumctr}{#1}%
+  \addtocounter{\@enumctr}{-1}%
+}
+\newcommand{\skipitems}[1]{%
+  \addtocounter{\@enumctr}{#1}%
+}
+\newcommand{\skipitem}{%
+  \stepcounter{\@enumctr}%
+}
+\makeatother
+\makeatother
+
+\renewcommand{\phi}{\varphi}
+\renewcommand{\epsilon}{\varepsilon}
+
+\DeclareMathOperator{\Bd}{Bd}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\Null}{null}
+\DeclareMathOperator{\Range}{range}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\Dim}{dim}
+\DeclareMathOperator{\Trace}{trace}
+\DeclareMathOperator{\Tran}{^t}
+\DeclareMathOperator{\Orb}{Orb}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Z}{Z}
+\DeclareMathOperator{\Lcm}{lcm}
